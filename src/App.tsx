@@ -1,5 +1,3 @@
-import React from "react";
-import PostContainer from "./components/PostContainer";
 import {useRoutes} from "react-router-dom";
 import {routes} from "./routes";
 
