@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import { useGetAllPostsQuery } from "../services/PostsService";
 import PostItem from "./PostItem";
+import s from './PostContainer.module.css'
 const PostContainer: FC = () => {
   const [currentPostStart, setCurrentPostStart] = useState<number>(0);
   const [getDown, setGetDown] = useState<boolean>(false);
@@ -11,11 +12,10 @@ const PostContainer: FC = () => {
     isLoading,
     isFetching,
   } = useGetAllPostsQuery({
-    limit: 15,
+    limit: 10,
     start: currentPostStart,
   });
 
-  console.log("currentPostStart", currentPostStart);
   useEffect(() => {
     if (getDown) {
       setCurrentPostStart((prev) => {
@@ -61,9 +61,11 @@ const PostContainer: FC = () => {
   };
 
   return (
-    <div>
-      <div className="post_list">
-        {posts?.map((post) => <PostItem post={post} key={post?.id} />)}
+    <div className={s.container}>
+     <div className={s.post_list}>
+        {posts?.map((post) => (
+            <PostItem post={post} key={post?.id} />
+        ))}
       </div>
       {isLoading && <div>Loading...</div>}
     </div>
