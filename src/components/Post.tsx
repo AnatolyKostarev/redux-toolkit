@@ -5,8 +5,14 @@ import s from './Post.module.css'
 import Button from "./Button";
 const Post = () => {
     const location = useLocation()
-    const { data: post, isLoading} = useGetPostByIdQuery(+location.pathname.slice(-1))
-    console.log('data', post)
+    const id = Number(location.pathname.substring(
+        location.pathname.lastIndexOf('/') + 1,
+        location.pathname.length))
+
+    const { data: post, isLoading} = useGetPostByIdQuery(id)
+    console.log('location', location.pathname.substring(
+        location.pathname.lastIndexOf('/') + 1,
+        location.pathname.length))
     return (
         <div className={s.post_wrapper}>
             <div className={s.post}>
