@@ -1,0 +1,33 @@
+.post_item {
+    padding: 10px 20px;
+    background: #f3f3f3;
+    border-radius: 20px;
+    box-shadow: 0 1px 20px 0 rgba(113, 113, 113, 0.15);
+}
+
+.postitem_number {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.postitem_title:first-letter {
+    text-transform: uppercase;
+    color: #e80b0b;
+}
+
+.postitem_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.postitem_body {
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 18px;
+}
+
+.postitem_body:first-letter {
+    font-size: 20px;
+    text-transform: uppercase;
+}
