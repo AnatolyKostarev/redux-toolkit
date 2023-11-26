@@ -10,9 +10,6 @@ const Post = () => {
         location.pathname.length))
 
     const { data: post, isLoading} = useGetPostByIdQuery(id)
-    console.log('location', location.pathname.substring(
-        location.pathname.lastIndexOf('/') + 1,
-        location.pathname.length))
     return (
         <div className={s.post_wrapper}>
             <div className={s.post}>
